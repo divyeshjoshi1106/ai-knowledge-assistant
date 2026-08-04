@@ -1,7 +1,7 @@
 from app.schemas.document import Document, DocumentCreate
+from app.database.memory import documents
 from fastapi import HTTPException
 
-documents = []
 next_id = 1
 
 
