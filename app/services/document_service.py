@@ -1,4 +1,4 @@
-from app.schemas.documents import Document, DocumentCreate
+from app.schemas.document import Document, DocumentCreate
 from fastapi import HTTPException
 
 documents = []
@@ -46,11 +46,7 @@ def update_document(document_id: int, document: DocumentCreate):
         if doc.id == document_id:
             doc.filename = document.filename
             doc.description = document.description
-            return {
-                    "file_id": doc.id,
-                    "filename": doc.filename,
-                    "description": "updated description"
-                }
+            return doc
     raise HTTPException(
         status_code=404,
         detail="Document doesn't exist"

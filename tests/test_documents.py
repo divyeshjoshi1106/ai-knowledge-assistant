@@ -1,5 +1,5 @@
 from app.services import document_service
-from app.schemas.documents import DocumentCreate
+from app.schemas.document import DocumentCreate
 
 def test_create_document():
     document = DocumentCreate(

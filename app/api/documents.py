@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.schemas.documents import Document, DocumentCreate
+from app.schemas.document import Document, DocumentCreate
 from app.services import document_service
 
 router = APIRouter()
