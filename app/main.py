@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-
 from app.api.documents import router
+from app.database.init_db import init_db
 
 app = FastAPI(
     title="AI Knowledge Assistant",
@@ -10,6 +10,7 @@ app = FastAPI(
 
 app.include_router(router, prefix="/documents", tags=["Documents"])
 
+init_db()
 
 @app.get("/")
 def home():
