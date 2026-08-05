@@ -1,9 +1,6 @@
 from app.schemas.document import Document, DocumentCreate
-from app.database.memory import documents
+from app.database.memory import documents, next_id
 from fastapi import HTTPException
-
-next_id = 1
-
 
 def get_document(document_id: int):
     for document in documents:
