@@ -8,3 +8,12 @@ services:
       POSTGRES_DB: knowledge_db
     ports:
       - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: ai-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "8080:80"
